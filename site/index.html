@@ -73,6 +73,78 @@
                 </div>
             </nav>
             
+            <!-- Cookie Consent Banner -->
+            <div id="cookieConsent" class="position-fixed bottom-0 start-0 end-0 bg-dark text-white p-3" style="z-index: 1050; display: none;">
+                <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between">
+                    <div class="mb-2 mb-md-0">
+                        Ce site utilise des cookies pour améliorer votre expérience et mesurer l’audience (Google Analytics). 
+                        <a href="mentionleg.html" class="text-white text-decoration-underline">En savoir plus</a>
+                    </div>
+                    <div>
+                        <button id="acceptCookies" class="btn btn-success btn-sm me-2">Accepter</button>
+                        <button id="declineCookies" class="btn btn-outline-light btn-sm">Refuser</button>
+                    </div>
+                </div>
+            </div>
+            <script>
+            (function() {
+                function setCookie(name, value, days) {
+                    var expires = "";
+                    if (days) {
+                        var date = new Date();
+                        date.setTime(date.getTime() + (days*24*60*60*1000));
+                        expires = "; expires=" + date.toUTCString();
+                    }
+                    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+                }
+                function getCookie(name) {
+                    var nameEQ = name + "=";
+                    var ca = document.cookie.split(';');
+                    for(var i=0;i < ca.length;i++) {
+                        var c = ca[i];
+                        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+                    }
+                    return null;
+                }
+                function showConsent() {
+                    document.getElementById('cookieConsent').style.display = 'block';
+                }
+                function hideConsent() {
+                    document.getElementById('cookieConsent').style.display = 'none';
+                }
+                function loadGtag() {
+                    var gtagScript = document.createElement('script');
+                    gtagScript.async = true;
+                    gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-F2P6Y1KE3F";
+                    document.head.appendChild(gtagScript);
+
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    window.gtag = gtag;
+                    gtag('js', new Date());
+                    gtag('config', 'G-F2P6Y1KE3F');
+                }
+
+                var consent = getCookie('cookieConsent');
+                if (consent === null) {
+                    showConsent();
+                } else if (consent === "accepted") {
+                    loadGtag();
+                }
+
+                document.getElementById('acceptCookies').onclick = function() {
+                    setCookie('cookieConsent', 'accepted', 365);
+                    hideConsent();
+                    loadGtag();
+                };
+                document.getElementById('declineCookies').onclick = function() {
+                    setCookie('cookieConsent', 'declined', 365);
+                    hideConsent();
+                };
+            })();
+            </script>
+            
             <!-- Header-->
             <header class="bg-dark-home py-5">
                 <div class="container">
@@ -89,6 +161,7 @@
                     </div>
                 </div>
             </header>
+            
             <!-- Description Section -->
             <section class="py-5 bg-light" id="description">
                 <div class="container px-5 my-5">
@@ -103,7 +176,7 @@
                     </div>
                 </div>
             </section>
-            
+        
             <!-- Features section-->
             <section class="py-5" id="features">
                 <div class="container px-5 my-5">
