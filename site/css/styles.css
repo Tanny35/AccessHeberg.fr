@@ -8206,7 +8206,7 @@ textarea.form-control-lg {
 .bg-dark-home {
   --bs-bg-opacity-home: 0.8;
   /*background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity-home)) !important;*/
-  background-image: url('../assets/wallpaper.jpg');
+  background-image: url('../assets/wallpaper.webp');
   height: 100vh;
   background-size: cover;
   position: relative;
@@ -8216,7 +8216,7 @@ textarea.form-control-lg {
 .bg-team {
   --bs-bg-opacity-home: 0.8;
   /*background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity-home)) !important;*/
-  background-image: url('../assets/wallpaper.jpg');
+  background-image: url('../assets/wallpaper.webp');
   height: 50vh;
   background-size: cover;
   position: relative;
