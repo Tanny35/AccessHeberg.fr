@@ -5,16 +5,45 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="Bienvenue chez AccessHeberg, une association loi 1901 qui propose des services d'hebergement." />
         <meta name="author" content="Eythan" />
-        <title>AccessHeberg</title>
+        <title>AccessHeberg - Accueil</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="/assets/Logo1.ico" />
         <!-- Bootstrap icons-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <!-- HTTP header hint for Accept-Encoding -->
+        <meta http-equiv="Accept-Encoding" content="gzip, compress, br">
     </head>
     <body class="d-flex flex-column h-100">
         <main class="flex-shrink-0">
+        
+        <!-- Schema.org JSON-LD -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "AccessHeberg",
+            "url": "https://accessheberg.fr",
+            "logo": "https://accessheberg.fr/assets/Logo1.webp",
+            "description": "AccessHeberg est une association loi 1901 qui propose des services d'hébergement à prix abordable.",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "60 Rue François 1er",
+                "addressLocality": "Paris",
+                "postalCode": "75008",
+                "addressCountry": "FR"
+            },
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "email": "contact@accessheberg.fr",
+                "contactType": "customer support"
+            },
+            "sameAs": [
+                "https://discord.gg/xYcVwUsb"
+            ]
+        }
+        </script>
             
             <!-- Navigation-->
             <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -253,8 +282,6 @@
                     <div class="col-auto"><div class="small m-0 text-white">AccessHeberg.fr</div></div>
                     <div class="col-auto">
                         <a class="link-light small" href="CGU.html">CGU</a>
-                        <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="CGV.html">CGV</a>
                         <span class="text-white mx-1">&middot;</span>
                         <a class="link-light small" href="mentionleg.html">Mentions Légales</a>
                     </div>
