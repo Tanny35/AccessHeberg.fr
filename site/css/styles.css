@@ -8213,6 +8213,26 @@ textarea.form-control-lg {
   overflow: hidden;
 }
 
+.bg-dark-services-web {
+  --bs-bg-opacity-home: 0.8;
+  /*background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity-home)) !important;*/
+  background-image: url('../assets/wallpaper-2.webp');
+  height: 55vh;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-dark-services-vps {
+  --bs-bg-opacity-home: 0.8;
+  /*background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity-home)) !important;*/
+  background-image: url('../assets/wallpaper3.webp');
+  height: 55vh;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
 .bg-team {
   --bs-bg-opacity-home: 0.8;
   /*background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity-home)) !important;*/
